@@ -6,7 +6,7 @@ class RecipeService
     end
   end
 
-  def self.all_recipes(country)
+  def self.all_recipes_by_country(country)
     response = conn.get("/search?q=#{country}")
 
     JSON.parse(response.body, symbolize_names: true)
