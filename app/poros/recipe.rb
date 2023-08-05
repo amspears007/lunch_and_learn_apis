@@ -2,7 +2,8 @@ class Recipe
   attr_reader :title,
               :url,
               :country,
-              :image
+              :image,
+              :id
 
   def initialize(data, country)
     # require 'pry'; binding.pry
@@ -10,5 +11,6 @@ class Recipe
     @url = data[:recipe][:url]
     @country = country
     @image = data[:recipe][:image]
+    @id = nil
   end
 end
