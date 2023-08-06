@@ -2,9 +2,9 @@ require "rails_helper"
 
 RSpec.describe CountryService do
   describe "gets all countries" do
-    it ".all_countries" do
+    it " returns all_countries", :vcr do
       countries = CountryService.all_countries
-
+# require 'pry'; binding.pry
       expect(countries).to be_an(Array)
       expect(countries.count).to eq(250)
 

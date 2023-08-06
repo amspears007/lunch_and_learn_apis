@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Recipes index request" do
   describe "GET /api/v1/recipes/search" do
-    it "requests all the recipes" do
+    it "requests all the recipes", :vcr do
       get "/api/v1/recipes?country=thailand"
       expect(response).to be_successful
       expect(response.status).to eq(200)
@@ -38,7 +38,7 @@ RSpec.describe "Recipes index request" do
       end
     end
 
-    it "returns an empty array when no recipies match the given country" do
+    it "returns an empty array when no recipies match the given country", :vcr  do
       get "/api/v1/recipes?country=xyz"
 
       expect(response).to be_successful
@@ -51,7 +51,7 @@ RSpec.describe "Recipes index request" do
       expect(recipe_result[:data]).to eq([])
     end
 
-    it "returns an empty array when the country inputted is an empty string" do
+    it "returns an empty array when the country inputted is an empty string", :vcr  do
       get "/api/v1/recipes?country="""
 
       expect(response).to be_successful

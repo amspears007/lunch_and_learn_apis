@@ -22,3 +22,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+Edamam API key and application id: https://developer.edamam.com/edamam-recipe-api

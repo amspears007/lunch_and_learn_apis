@@ -11,8 +11,8 @@ class RecipeService
 
   def self.conn
     Faraday.new("https://api.edamam.com") do |faraday|
-    faraday.params["app_id"] = ENV["app_id"]
-    faraday.params["app_key"] = ENV["app_key"]
+    faraday.params["app_id"] = ENV["edamam_id"]
+    faraday.params["app_key"] = ENV["edamam_key"]
     end
   end
 end
