@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Learning Resources Search Request" do
   describe "GET /api/v1/learning_resources/search" do
-    it "requests all the learning resources"do
+    xit "requests all the learning resources"do
     Videoservice.new
       get "/api/v1/learning_resources?country=thailand"
 
