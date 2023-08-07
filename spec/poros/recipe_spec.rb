@@ -17,6 +17,7 @@ RSpec.describe Recipe do
       expect(new_recipe.title).to eq("Amy's Deliciousness")
       expect(new_recipe.url).to eq("https://www.amy's eats.com")
       expect(new_recipe.image).to eq("funny food image")
+
     end
   end
 end

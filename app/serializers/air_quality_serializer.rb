@@ -5,5 +5,8 @@ class AirQualitySerializer
               :pm25_concentration,
               :co_concentration,
               :city
-
 end
+
+
+
+
