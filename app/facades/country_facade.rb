@@ -9,4 +9,9 @@ class CountryFacade
       country
     end
   end
+
+  def self.get_capital(country)
+    capital = CountryService.country_by_name(country)
+    capital[0][:capital][0]
+  end
 end

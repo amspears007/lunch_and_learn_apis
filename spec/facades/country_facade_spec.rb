@@ -14,5 +14,12 @@ RSpec.describe CountryFacade do
       expect(single_country).to be_a(String)
       expect(single_country.nil?).to eq(false)
     end
+
+    it "will return capital city name" do
+      city = CountryFacade.get_capital("france")
+
+      expect(city).to eq("Paris")
+      expect(city).to be_a(String)
+    end
   end
 end
