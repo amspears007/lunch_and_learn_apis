@@ -11,9 +11,9 @@ RSpec.describe Video do
           videoId: "a4a4a4a4a4"
         }
       }
-      country = "usa"
+      # country = "usa"
 
-      new_video = Video.new(attributes, country)
+      new_video = Video.new(attributes)
 
       # expect(new_video.country).to eq( "usa")
       expect(new_video.title).to eq("Amy's Deliciousness")

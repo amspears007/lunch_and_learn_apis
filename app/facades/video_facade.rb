@@ -5,7 +5,7 @@ class VideoFacade
     # require 'pry'; binding.pry
     first_video = response[:items].map do |video|
       # require 'pry'; binding.pry
-      Video.new(video, country)
-    end
+      Video.new(video)
+    end.first
   end
 end
