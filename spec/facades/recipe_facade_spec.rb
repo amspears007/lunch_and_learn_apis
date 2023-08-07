@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe RecipeFacade do
-  it "returns an array of recipe objects" do
+  it "returns an array of recipe objects", :vcr  do
     recipes = RecipeFacade.get_recipes("thailand")
 
     expect(recipes).to be_an(Array)

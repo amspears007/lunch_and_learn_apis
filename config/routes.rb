@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     namespace :v1 do
-      resources :recipes, only: [:index]
+      get "recipes", to: "recipes#search"
+      get "learning_resources", to: "learning_resources#search"
+      # resources :recipes, only: [:index]
     end
   end
 end
