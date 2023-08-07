@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe VideoService do
   describe "it gets all videos" do
-    it "gets videos from a specific country", :vcr do
+    it "gets videos from a specific country" do
       videos = VideoService.get_videos_by_country("thailand")
       first_video = videos[:items].first
       expect(videos).to be_a(Hash)
