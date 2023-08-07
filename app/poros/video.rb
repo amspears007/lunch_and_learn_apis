@@ -1,5 +1,5 @@
 class Video
-  attr_reader :title, :video_id
+  attr_reader :title, :video_id, :id
 
   def initialize(data)
     @title = data[:snippet][:title]
