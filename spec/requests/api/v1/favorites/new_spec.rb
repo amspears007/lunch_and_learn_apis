@@ -18,9 +18,11 @@ RSpec.describe "Add a new favorite " do
 
         expect(response).to be_successful
         expect(response.status).to eq(201)
-        added_recipe = JSON.parse(response.body, symbolize_names: true)
-
-        expect(happy_response).to be_a(Hash)
+        favorite = JSON.parse(response.body, symbolize_names: true)
+# require 'pry'; binding.pry
+        expect(favorite).to be_a(Hash)
+        expect(favorite).to have_key(:success)
+        expect(favorite[:success]).to eq("Favorite added successfully")
       end
     end
   end
