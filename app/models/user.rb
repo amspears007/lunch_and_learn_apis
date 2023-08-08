@@ -8,6 +8,7 @@ class User < ApplicationRecord
   before_validation :generate_api_key
 
   has_secure_password
+  has_many :favorites
 
   private
 
