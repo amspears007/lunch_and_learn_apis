@@ -29,5 +29,22 @@ RSpec.describe "user login" do
     expect(user[:data][:attributes][:email]).to be_a(String)
     expect(user[:data][:attributes][:api_key]).to be_a(String)
     end
+
+    it "sad path it returns an error message in response when a user logs in incorrectly" do
+
+      login = {
+        "email": "max_dog@ruffruff.com",
+        "password": "treats321"
+      }
+      post "/api/v1/sessions", params: login
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(401)
+      user = JSON.parse(response.body, symbolize_names: true)
+      
+      expect(user).to be_a(Hash)
+      expect(user).to have_key(:error)
+      expect( user[:error]).to eq( "Invalid email or password")
+    end
   end
 end
