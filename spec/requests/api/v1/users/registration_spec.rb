@@ -50,8 +50,23 @@ RSpec.describe "user registration" do
 
       json_response = JSON.parse(response.body, symbolize_names: true)
       expect(json_response).to be_a(Hash)
-
       expect(json_response[:email]).to eq(["has already been taken"])
+    end
+
+    it "SAD PATH an error message should be returned if password confirmation does not match" do
+      new_user = {
+        "name": "Odell",
+        "email": "goodboy@ruffruff.com",
+        "password": "treats4lyf",
+        "password_confirmation": "123"
+      }
+
+      post "/api/v1/users", params: new_user
+      expect(response).to_not be_successful
+      expect(response.status).to eq(422)
+      json_response = JSON.parse(response.body, symbolize_names: true)
+      expect(json_response).to be_a(Hash)
+      expect(json_response[:password_confirmation]).to eq(["doesn't match Password"])
     end
   end
 end
