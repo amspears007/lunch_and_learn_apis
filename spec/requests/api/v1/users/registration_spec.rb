@@ -9,6 +9,7 @@ RSpec.describe "user registration" do
     it "it returns a user with name, email and api_key" do
 # require 'pry'; binding.pry
     user_params = {
+
       "name": "Odell",
       "email": "goodboy@ruffruff.com",
       "password": "treats4lyf",
@@ -16,7 +17,7 @@ RSpec.describe "user registration" do
     }
 
     # headers = { 'CONTENT_TYPE' => 'application/json' } can't remember what this line is for
-    post "/api/v1/users", params: user_params
+    post "/api/v1/users", params: user_params, as: :json
 
       expect(response).to be_successful
       expect(response.status).to eq(201)
