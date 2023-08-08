@@ -24,5 +24,27 @@ RSpec.describe "Add a new favorite " do
         expect(favorite).to have_key(:success)
         expect(favorite[:success]).to eq("Favorite added successfully")
       end
+
+
+      it "SAD PATH returns an error if the API key is invalid" do
+
+        user_params = {
+          "api_key": "101010101",
+          "country": "thailand",
+          "recipe_link": "https://www.tastingtable.com/.....",
+          "recipe_title": "Crab Fried Rice (Khaao Pad Bpu)"
+        }
+
+        post "/api/v1/favorites", params: user_params
+
+        expect(response).to_not be_successful
+        expect(response.status).to eq(401)
+        no_favorite = JSON.parse(response.body, symbolize_names: true)
+
+        expect(no_favorite).to be_a(Hash)
+        expect(no_favorite).to have_key(:error)
+        expect(no_favorite[:error]).to be_a(String)
+        expect(no_favorite[:error]).to eq("Invalid API key")
+      end
     end
   end

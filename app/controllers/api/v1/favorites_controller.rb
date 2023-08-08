@@ -6,7 +6,6 @@ class Api::V1::FavoritesController < ApplicationController
     else
       favorite = user.favorites.create(favorite_params)
       render json: { success: "Favorite added successfully" }, status: 201
-      require 'pry'; binding.pry
     end
   end
 
