@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get "recipes", to: "recipes#search"
       get "learning_resources", to: "learning_resources#search"
+      post "users", to: "users#create"
       # resources :recipes, only: [:index]
     end
   end
