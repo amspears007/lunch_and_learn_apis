@@ -10,4 +10,8 @@ RSpec.describe User, type: :model do
     # it { should validate_uniqueness_of(:api_key) }
     # it { should have_secure_token :api_key }
   end
+
+  describe "relationships" do
+    it { have_many :favorites }
+  end
 end
