@@ -1,10 +1,6 @@
 require "rails_helper"
 
 RSpec.describe "user registration" do
-  before(:each) do
-    @user = User.create!(name: "max", email: "max_dog@ruffruff.com", password: "treats123", password_confirmation: "treats123" )
-  end
-
   describe "it creates a user" do
     it "it returns a user with name, email and api_key" do
 # require 'pry'; binding.pry
@@ -37,6 +33,7 @@ RSpec.describe "user registration" do
 
 
     it "SAD PATH an error message should be returned if the email is not unique" do
+      @user = User.create!(name: "max", email: "max_dog@ruffruff.com", password: "treats123", password_confirmation: "treats123" )
 
       new_user = {
         "name": "Odell",

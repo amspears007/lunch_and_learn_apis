@@ -77,5 +77,8 @@ end
     config.hook_into :webmock
     config.filter_sensitive_data('edamam_id') { ENV['edamam_id'] }
     config.filter_sensitive_data('edamam_key') { ENV['edamam_key'] }
+    config.filter_sensitive_data("youtube_key") { ENV["youtube_key"] }
+    config.filter_sensitive_data("UNSPLASH_KEY") { ENV["UNSPLASH_KEY"] }
+    config.filter_sensitive_data("api_ninjas") { ENV["api_ninjas"] }
     config.configure_rspec_metadata!
   end
