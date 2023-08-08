@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe ImageService do
   describe "it gets images" do
-    it "gets imagesfrom a specific country", :vcr do
+    it "gets imagesfrom a specific country" do
       images = ImageService.get_images_by_country("laos")
       expect(images).to be_a(Hash)
       expect(images[:results].count).to eq(10)
