@@ -9,7 +9,7 @@ RSpec.describe ImageService do
       expect(images[:results]).to be_an(Array)
 
       images[:results]. map do |image|
-        expect(image[:alt_description]).to be_a(String)
+        expect(image[:description]).to be_a(String)
         expect(image[:urls]).to be_a(Hash)
         expect(image[:urls][:raw]).to be_a(String)
       end
