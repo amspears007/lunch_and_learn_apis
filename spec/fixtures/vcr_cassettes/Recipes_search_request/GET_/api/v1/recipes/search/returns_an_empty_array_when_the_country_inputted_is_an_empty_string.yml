@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=edamam_id&app_key=edamam_key&q=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Tue, 08 Aug 2023 02:14:20 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      X-Served-By:
+      - ip-10-0-1-171.ec2.internal/10.0.1.171
+      Vary:
+      - accept-encoding
+      Strict-Transport-Security:
+      - max-age=15552001
+      X-Request-Id:
+      - e1bbac32c9533803a4987aa64fdf999e
+    body:
+      encoding: ASCII-8BIT
+      string: '{"q":"","from":0,"to":10,"more":false,"count":0,"hits":[]}'
+  recorded_at: Tue, 08 Aug 2023 02:14:20 GMT
+recorded_with: VCR 6.2.0
