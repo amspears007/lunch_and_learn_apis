@@ -7,4 +7,11 @@ RSpec.describe ImageFacade do
     expect(images.count).to eq(10)
     expect(images.first).to be_a(Image)
   end
+
+  it "returns an empty array if no images are found", :vcr  do
+    images = ImageFacade.get_images("wghty")
+
+    expect(images).to be_an(Array)
+    expect(images.empty?).to eq(true)
+  end
 end

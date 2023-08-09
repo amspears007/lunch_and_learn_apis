@@ -19,5 +19,21 @@ RSpec.describe "Learning Resources Search Request" do
       expect(result[:data][:attributes]).to have_key(:video)
       expect(result[:data][:attributes][:video]).to have_key(:video_id)
     end
+
+    it "SAD PATH if no images are found, the image key should be an empty array" do
+      get "/api/v1/learning_resources?country=genericcountry"
+
+      expect(response).to be_successful
+
+      sad = JSON.parse(response.body, symbolize_names: true)
+      expect(sad).to have_key(:data)
+      expect(sad[:data]).to have_key(:id)
+      expect(sad[:data]).to have_key(:type)
+      expect(sad[:data]).to have_key(:attributes)
+      expect(sad[:data][:attributes]).to have_key(:country)
+      expect(sad[:data][:attributes][:images]).to eq([])
+      expect(sad[:data][:attributes][:images].empty?).to eq(true)
+      expect(sad[:data][:attributes][:video]).to be_a(Hash)
+    end
   end
 end
