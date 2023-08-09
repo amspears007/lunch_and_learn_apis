@@ -20,7 +20,7 @@ RSpec.describe "Learning Resources Search Request" do
       expect(result[:data][:attributes][:video]).to have_key(:video_id)
     end
 
-    it "SAD PATH if no images are found, the image key should be an empty array" do
+    it "SAD PATH if no images are found, the image key should be an empty array", :vcr do
       get "/api/v1/learning_resources?country=genericcountry"
 
       expect(response).to be_successful
@@ -34,6 +34,18 @@ RSpec.describe "Learning Resources Search Request" do
       expect(sad[:data][:attributes][:images]).to eq([])
       expect(sad[:data][:attributes][:images].empty?).to eq(true)
       expect(sad[:data][:attributes][:video]).to be_a(Hash)
+    end
+
+    it "returns an empty data hash when the country parameter is an empty string", :vcr do
+      get "/api/v1/learning_resources?country="""
+
+      expect(response).to be_successful
+
+      sad = JSON.parse(response.body, symbolize_names: true)
+
+      expect(sad).to be_a(Hash)
+      expect(sad).to have_key(:data)
+      expect(sad[:data]).to eq({})
     end
   end
 end
