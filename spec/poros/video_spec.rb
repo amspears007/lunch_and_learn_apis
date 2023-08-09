@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Video do
-  describe "it creates video objects" do
+  describe "it creates video objects", :vcr do
     it "exists" do
       attributes = {
         snippet: {

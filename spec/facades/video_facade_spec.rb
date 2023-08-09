@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe VideoFacade do
-  it "returns a video object"  do
+  it "returns a video object", :vcr  do
     video = VideoFacade.get_one_video("thailand")
 
     expect(video).to be_a(Video)
@@ -10,5 +10,5 @@ RSpec.describe VideoFacade do
     expect(video.video_id).to be_a(String)
   end
 
-  
+
 end
