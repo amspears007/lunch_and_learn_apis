@@ -17,7 +17,7 @@ RSpec.describe "user login" do
     expect(response).to be_successful
     expect(response.status).to eq(200)
     user = JSON.parse(response.body, symbolize_names: true)
-# require 'pry'; binding.pry
+    
     expect(user).to be_a(Hash)
     expect(user).to have_key(:data)
     expect(user[:data][:id]).to be_a(String)
@@ -41,7 +41,7 @@ RSpec.describe "user login" do
       expect(response).to_not be_successful
       expect(response.status).to eq(401)
       user = JSON.parse(response.body, symbolize_names: true)
-      
+
       expect(user).to be_a(Hash)
       expect(user).to have_key(:error)
       expect( user[:error]).to eq( "Invalid email or password")

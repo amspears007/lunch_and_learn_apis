@@ -5,7 +5,7 @@ class LearningResource
               :images
 
   def initialize(country, video, images)
-    @id = nil
+    @id = "null"
     @country = country
     @video = video
     @images = images

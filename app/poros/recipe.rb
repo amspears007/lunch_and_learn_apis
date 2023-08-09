@@ -11,6 +11,6 @@ class Recipe
     @url = data[:recipe][:url]
     @country = country
     @image = data[:recipe][:image]
-    @id = nil
+    @id = "null"
   end
 end

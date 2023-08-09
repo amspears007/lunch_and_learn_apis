@@ -3,7 +3,6 @@ require "rails_helper"
 RSpec.describe "user registration" do
   describe "it creates a user" do
     it "it returns a user with name, email and api_key" do
-# require 'pry'; binding.pry
     user_params = {
 
       "name": "Odell",
