@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Learning Resources Search Request" do
   describe "GET /api/v1/learning_resources/search" do
-    it "requests all the learning resources"do
+    it "requests all the learning resources", :vcr do
       get "/api/v1/learning_resources?country=thailand"
 
       expect(response).to be_successful
@@ -10,7 +10,7 @@ RSpec.describe "Learning Resources Search Request" do
     result = JSON.parse(response.body, symbolize_names: true)
       expect(result).to be_a(Hash)
       expect(result[:data][:type]).to eq("learning_resource")
-      expect(result[:data][:id]).to eq(nil)
+      expect(result[:data][:id]).to eq("null")
       expect(result[:data][:attributes][:country]).to eq("thailand")
       expect(result[:data][:attributes][:images]).to be_an(Array)
       expect(result[:data][:attributes][:images].size).to be_a(Integer)

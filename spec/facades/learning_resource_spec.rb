@@ -5,7 +5,7 @@ RSpec.describe LearningResourceFacade do
     resources =  LearningResourceFacade.get_resources("thailand")
 
     expect(resources).to be_a(LearningResource)
-    expect(resources.id).to eq(nil)
+    expect(resources.id).to eq("null")
     expect(resources.images).to be_an(Array)
     expect(resources.images.size).to eq(10)
     expect(resources.country).to eq("thailand")
