@@ -7,7 +7,7 @@ This app will allow users to explore cuisines by country, searching recipes, fav
 - [Learning Goals](#learning-goals)
 - [How To Install](#how-to-install)
 - [Endpoints](#endpoints)
-- [Tech & Tools Used](#tech--tools-used)
+- [Tech Stack](#tech-stack)
 
 ## Learning Goals
 
@@ -107,24 +107,8 @@ If no videos or images are found, those keys should point to an empty object:
 - Add Favorite Recipes endpoint: `POST /api/v1/favorites`
 - Get User Favorites endpoint: `GET /api/v1/favorites?api_key=<key>`
 
+## Tech Stack
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-Edamam API key and application id: https://developer.edamam.com/edamam-recipe-api
+- This project used Rails 7.0, Ruby 3.1.1, and PostgreSQL
+- Gems utilized: <br> *rspec-rails, capybara, shoulda-matchers, orderly, launchy, bcrypt, <br> jsonapi-serializer, faraday, figaro, simplecov, VCR*
+- More details about the project and its requirements can be found [here](https://backend.turing.edu/module3/projects/lunch_and_learn/index)
