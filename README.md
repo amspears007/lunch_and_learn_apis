@@ -1,5 +1,7 @@
 # Overview
 
+![Vietnamese Cuisine](./images/jakub-dziubak-iOHJKJqO6E0-unsplash.jpg)
+
 Lunch and Learn is a Ruby on Rails back-end application that exposes APIs
 This app will allow users to explore cuisines by country, searching recipes, favoriting items, and learning about different cultures. It incorporates CRUD functionality, authentication, and integration with external APIs.   Working within a service-oriented architecture, the back-end developer's role is to facilitate API communication between the front-end.
 
@@ -111,4 +113,4 @@ If no videos or images are found, those keys should point to an empty object:
 
 - This project used Rails 7.0, Ruby 3.1.1, and PostgreSQL
 - Gems utilized: <br> *rspec-rails, capybara, shoulda-matchers, orderly, launchy, bcrypt, <br> jsonapi-serializer, faraday, figaro, simplecov, VCR*
-- More details about the project and its requirements can be found [here](https://backend.turing.edu/module3/projects/lunch_and_learn/index)
+- Additional details about the project and its requirements can be found [here](https://backend.turing.edu/module3/projects/lunch_and_learn/index)
