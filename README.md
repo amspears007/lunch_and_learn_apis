@@ -1,9 +1,10 @@
 # Overview
 
-![Vietnamese Cuisine](./images/jakub-dziubak-iOHJKJqO6E0-unsplash.jpg)
 
 Lunch and Learn is a Ruby on Rails back-end application that exposes APIs
 This app will allow users to explore cuisines by country, searching recipes, favoriting items, and learning about different cultures. It incorporates CRUD functionality, authentication, and integration with external APIs.   Working within a service-oriented architecture, the back-end developer's role is to facilitate API communication between the front-end.
+
+![Vietnamese Cuisine](./images/jakub-dziubak-iOHJKJqO6E0-unsplash.jpg)
 
 ## Table of Contents
 - [Learning Goals](#learning-goals)

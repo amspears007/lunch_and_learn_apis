@@ -2,8 +2,7 @@ class VideoService
   def self.conn
     conn = Faraday.new("https://www.googleapis.com") do |faraday|
     faraday.params["key"] = ENV["you_tube_key"]
-  end
-  # require 'pry'; binding.pry
+    end
   end
 
   def self.get_url(url)

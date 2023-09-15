@@ -4,6 +4,7 @@ RSpec.describe "Recipes search request" do
   describe "GET /api/v1/recipes/search" do
     it "requests all the recipes", :vcr do
       get "/api/v1/recipes?country=thailand"
+      
       expect(response).to be_successful
       expect(response.status).to eq(200)
       recipe_result = JSON.parse(response.body, symbolize_names: true)
